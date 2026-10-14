@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asisten Belajar Offline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- BROWSER MOCKUP CONTAINER -->
+  <div class="browser-window">
+    <!-- BROWSER HEADER BAR -->
+    <div class="browser-topbar">
+      <div class="window-controls">
+        <span class="control-dot dot-red"></span>
+        <span class="control-dot dot-yellow"></span>
+        <span class="control-dot dot-green"></span>
+      </div>
+      <div class="browser-address-bar">
+        <span class="address-text">file:///C:/BahanP13/asisten_belajar.html</span>
+      </div>
+    </div>
+
+    <!-- MAIN APP WRAPPER -->
+    <div class="app-container">
+      <!-- SIDEBAR (10 MODUL TERSEDIA) -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span>10 MODUL TERSEDIA</span>
+        </div>
+        <div class="modules-list" id="modules-list">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT VIEW -->
+      <div class="main-content">
+        <!-- TOP TABS -->
+        <div class="tabs-header">
+          <button class="tab-btn active" id="tab-chatbot" data-tab="chatbot">
+            <span class="tab-icon chat-icon">💭</span>
+            <span class="tab-label">AI Chatbot</span>
+          </button>
+          <button class="tab-btn" id="tab-quiz" data-tab="quiz">
+            <span class="tab-icon quiz-icon">?</span>
+            <span class="tab-label">Generator Kuis</span>
+          </button>
+        </div>
+
+        <!-- TAB CONTENT: CHATBOT -->
+        <div class="tab-pane active" id="pane-chatbot">
+          <div class="chat-messages-container" id="chat-messages">
+            <!-- Messages rendered dynamically -->
+          </div>
+
+          <div class="chat-input-area">
+            <input 
+              type="text" 
+              id="chat-input" 
+              class="chat-text-input" 
+              placeholder="Apa itu renin dan apa bedanya dengan pepsin?"
+              autocomplete="off"
+            />
+            <div class="chat-button-group">
+              <button class="btn btn-teal" id="btn-kirim">Kirim</button>
+              <button class="btn btn-teal" id="btn-rangkum">Rangkum</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB CONTENT: GENERATOR KUIS -->
+        <div class="tab-pane" id="pane-quiz">
+          <div class="quiz-container" id="quiz-container">
+            <!-- Quiz contents rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT INCLUDES -->
+  <script src="modulesData.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="quiz.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
